@@ -29,10 +29,11 @@ def predict():
             result = ValuePredictor(to_predict_list,7)
 
     if(int(result)==1):
-        prediction = "Sorry you chances of getting the disease. Please consult the doctor immediately"
+        # prediction = "Sorry you chances of getting the disease. Please consult the doctor immediately"
+        return(render_template("result_bad.html", prediction_text=prediction))
     else:
-        prediction = "No need to fear. You have no dangerous symptoms of the disease"
-    return(render_template("result.html", prediction_text=prediction))
+#         prediction = "No need to fear. You have no dangerous symptoms of the disease"
+        return(render_template("result_good.html", prediction_text=prediction))
 
 if __name__ == "__main__":
     app.run()
